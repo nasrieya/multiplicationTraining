@@ -46,7 +46,7 @@ struct ContentView: View {
                                 Text("Practicing multiplication table")
                                     .font(.headline)
 
-                                Stepper(value: $multiplicationTable, in: 1...12 ){
+                                Stepper(value: $multiplicationTable, in: 1...12 ) {
                                     Text("multiplication table is \(multiplicationTable)")
                                 }
                             }
@@ -55,14 +55,14 @@ struct ContentView: View {
                                 Text("How many questions you want ?")
                                     .font(.headline)
 
-                                Picker("tip percentage", selection: $questionsNumber){
-                                        ForEach(0 ..< questionsNumbers.count){
+                                Picker("tip percentage", selection: $questionsNumber) {
+                                        ForEach(0 ..< questionsNumbers.count) {
                                             Text("\(self.questionsNumbers[$0])")
                                         }
                                     }.pickerStyle(SegmentedPickerStyle())
                                 }
                             }
-                        Button("Play"){
+                        Button("Play") {
                             startGame()
                                 }
                             .padding()
@@ -73,7 +73,7 @@ struct ContentView: View {
                 }
                 .navigationBarTitle("Multiplication Practice")
                 .navigationBarItems(trailing:
-                                        Button("restart"){
+                                        Button("restart") {
                                            restartGame()
                                         })
             
@@ -86,9 +86,9 @@ struct ContentView: View {
             }
         }
     
-    func nextQuestion(){
+    func nextQuestion() {
         totalQuestion -= 1
-        if(Int(result) == questions[currentQuestion].answer){
+        if Int(result) == questions[currentQuestion].answer{
             score += 1
         }
         if totalQuestion == 0 {
@@ -103,7 +103,7 @@ struct ContentView: View {
         
         
     }
-   func questionsGenerator(number: Int){
+   func questionsGenerator(number: Int) {
         for itr in 1...12 {
             questions.append(Question(questionText: "what is \(number) x \(itr) ?", answer: itr*number))
         }
@@ -128,7 +128,7 @@ struct ContentView: View {
     }
     
     
-    func restartGame(){
+    func restartGame() {
         playingMode = false
         settingMode = true
         multiplicationTable = 1
