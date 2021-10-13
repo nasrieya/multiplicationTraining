@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct  Question{
+struct  Question {
     var questionText: String
     var answer: Int
 }
@@ -35,7 +35,7 @@ struct ContentView: View {
                             Text(questions[currentQuestion].questionText)
                             TextField("result", text: $result)
                                 .keyboardType(.decimalPad)
-                            Button("Next"){
+                            Button("Next") {
                                 nextQuestion()
                             }
                                 }
@@ -88,7 +88,7 @@ struct ContentView: View {
     
     func nextQuestion() {
         totalQuestion -= 1
-        if Int(result) == questions[currentQuestion].answer{
+        if Int(result) == questions[currentQuestion].answer {
             score += 1
         }
         if totalQuestion == 0 {
@@ -111,7 +111,7 @@ struct ContentView: View {
     }
     
     
-    func startGame(){
+    func startGame() {
         playingMode = true
         settingMode = false
         questionsGenerator(number: multiplicationTable)
