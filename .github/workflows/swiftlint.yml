@@ -1,6 +1,8 @@
 name: SwiftLint
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     paths:
       - '.github/workflows/swiftlint.yml'
@@ -9,7 +11,7 @@ on:
 
 jobs:
   SwiftLint:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - name: GitHub Action for SwiftLint
