@@ -8,7 +8,7 @@
 import SwiftUI
 struct  Question{
     var questionText: String
-    var ansewr: Int
+    var answer: Int
 }
 
 
@@ -88,14 +88,14 @@ struct ContentView: View {
     
     func nextQuestion(){
         totalQuestion = totalQuestion - 1
-        if(Int(result) == questions[currentQuestion].ansewr){
-            score += 1
+        if(Int(result) == questions[currentQuestion].answer){
+            score = score + 1
         }
         if totalQuestion == 0 {
             showScore = true
         } else {
             
-            currentQuestion += 1
+            currentQuestion = currentQuestion + 1
             
         }
         print(score)
@@ -104,8 +104,8 @@ struct ContentView: View {
         
     }
    func questionsGenerator(number: Int){
-        for i in 1...12 {
-            questions.append(Question(questionText: "what is \(number) x \(i) ?", ansewr: i*number))
+        for itr in 1...12 {
+            questions.append(Question(questionText: "what is \(number) x \(itr) ?", answer: itr*number))
         }
     questions.shuffle()
     }
