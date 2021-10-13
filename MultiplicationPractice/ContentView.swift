@@ -87,15 +87,15 @@ struct ContentView: View {
         }
     
     func nextQuestion(){
-        totalQuestion = totalQuestion - 1
+        totalQuestion -= 1
         if(Int(result) == questions[currentQuestion].answer){
-            score = score + 1
+            score += 1
         }
         if totalQuestion == 0 {
             showScore = true
         } else {
             
-            currentQuestion = currentQuestion + 1
+            currentQuestion += 1
             
         }
         print(score)
