@@ -1,4 +1,4 @@
-name: SwiftLint
+name: CD-worflow
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
   pull_request:
     paths:
      # - '.github/workflows/swiftlint.yml'
-      - '.swiftlint.yml'
-      - '**/*.swift'
+    #  - '.swiftlint.yml'
+     # - '**/*.swift'
 
 jobs:
-  SwiftLint:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
