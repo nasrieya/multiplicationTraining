@@ -1,4 +1,4 @@
-name: Swift
+name: CI workflow
 
 on:
   push:
@@ -17,4 +17,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_12.app
     - name: Build 
       run: xcodebuild -project "MultiplicationPractice.xcodeproj" -scheme "MultiplicationPractice" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
-   
+    - name: Run SwiftLint
+      run: sudo xcode-select -switch /Applications/Xcode_12.app
+    - name: Test
+      run: sudo xcode-select -switch /Applications/Xcode_12.app
