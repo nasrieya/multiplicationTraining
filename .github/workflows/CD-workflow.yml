@@ -11,17 +11,13 @@ on:
 
 jobs:
   deployment:
-  
-  runs-on: macos-latest
-  
+    runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Force Xcode 12
-      run: sudo xcode-select -switch /Applications/Xcode_12.app
-    - name: deploy to Firebase 
-      run: xcodebuild -project "MultiplicationPractice.xcodeproj" -scheme "MultiplicationPractice" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
-   # runs-on: ubuntu-latest
-   # steps:
+     - uses: actions/checkout@v2
+     - name: Force Xcode 12
+       run: sudo xcode-select -switch /Applications/Xcode_12.app
+     - name: deploy to Firebase 
+       run: xcodebuild -project "MultiplicationPractice.xcodeproj" -scheme "MultiplicationPractice" -destination "generic/platform=iOS" -configuration Release build CODE_SIGNING_ALLOWED=NO
     #  - uses: actions/checkout@v1
     #  - name: deploy to Firebase
      #   uses: norio-nomura/action-swiftlint@3.2.1
